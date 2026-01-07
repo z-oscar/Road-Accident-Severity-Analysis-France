@@ -1,73 +1,79 @@
-# Projet python pour la datascience - ENSAE - 2A
+# Python Project for Data Science – ENSAE – 2A
 
-**_Auteurs: ABE Kevin, DEMGNE Lisa, ZAIDAN Oscar_**
+**_Authors: ABE Kevin, DEMGNE Lisa, ZAIDAN Oscar_**
 
-## Sujet: **Analyse des Facteurs Influençant la Gravité des Accidents de la Circulation en France**
-Les accidents de la circulation routière constituent l'une des préoccupations majeures des autorités francaises depuis des années. De l’après guerre à nos jours, environ 700 000 personnes ont été tuées sur les routes de France (OSNIR). Un ensemble de politiques ont été mises sur pieds pour lutter contre ce fléau. Par exemple, le permis à point est instauré en 1992 dans le but de pénaliser la mauvaise conduite. En 2001, Le Conseil national de la sécurité routière (CNSR) voit le jour. Il rassemble les principaux acteurs de la sécurité routière, avec leurs compétences et sensibilités respectives, afin qu’ils puissent débattre, échanger et réfléchir pour formuler des propositions concrètes à l’attention du Gouvernement pour inverser la courbe de la mortalité routière. L'ensemble de mesures mises en place par le CNSR ont entrainé une baisse de la mortalité de 51% sur la période 2002-2012 et de 11% sur la période 2012-2019. Il faut noter que les données statistiques nationales de sécurité routière sont collectées, mises en forme, interprétées et diffusées par L'Observatoire national interministériel de la sécurité routière (ONISR) ce qui assure un suivi continu de l'évolution de la courbe de mortalité dû aux accidents de la circulation routière.
-La France a signé les déclarations européennes de La Valette en 2017 et de Stockholm en 2020. Ainsi, elle s’est engagée à long terme dans la « vision zéro » (zéro décès et zéro blessé grave à l'horizon 2050) et a repris à son compte l’objectif en sécurité routière de l’ONU de réduire de moitié la mortalité routière et le nombre de blessés graves pour la décennie d’action en cours (d’ici 2030, en prenant comme année référence 2019, avant la pandémie).
-Ce projet a pour objectif d'analyser les données des accidents corporels de la circulation routière établies par l'ONISR, et de déterminer les facteurs pouvant influencer la gravité d'un accident.
+## Topic: **Analysis of Factors Influencing the Severity of Road Traffic Accidents in France**
 
-## Intérêt
-Un état des lieux de l'accidentologie pour une année donnée renseigne les forces de l'ordre sur l'efficacité ou non des mesures en place pour limiter les accidents routiers. De plus, l'identification des facteurs à risque peut aider à l'optimisation des patrouilles de polices ainsi que la circonscription des points de sensibilisation.
+Road traffic accidents have been one of the major concerns of French authorities for many years. From the post-war period to the present day, around 700,000 people have been killed on French roads (OSNIR). A wide range of policies have been implemented to combat this issue. For example, the points-based driving license system was introduced in 1992 to penalize dangerous driving behavior. In 2001, the National Road Safety Council (CNSR) was created. It brings together the main road safety stakeholders, with diverse expertise and perspectives, in order to debate, exchange ideas, and develop concrete proposals for the government to reverse the trend in road mortality.
+
+The set of measures implemented by the CNSR led to a 51% decrease in road deaths between 2002 and 2012, and a further 11% decrease between 2012 and 2019. It should be noted that national road safety statistics are collected, processed, analyzed, and disseminated by the National Interministerial Road Safety Observatory (ONISR), ensuring continuous monitoring of trends in road traffic fatalities.
+
+France signed the European declarations of Valletta in 2017 and Stockholm in 2020. Through these commitments, it has adopted the long-term “Vision Zero” strategy (zero deaths and zero serious injuries by 2050) and has aligned itself with the United Nations road safety objective of halving road deaths and serious injuries during the current decade of action (by 2030, using 2019 as the reference year, before the pandemic).
+
+The objective of this project is to analyze data on injury-causing road traffic accidents produced by the ONISR and to identify the factors that may influence accident severity.
+
+## Motivation
+
+A snapshot of accident statistics for a given year provides law enforcement agencies with insights into the effectiveness of measures implemented to reduce road accidents. In addition, identifying risk factors can help optimize police patrol deployment and better target awareness and prevention efforts.
 
 ## Installation
 
-Les packages utilisés dans ce projet sont:
-- requests
-- matplotlib
-- os
-- geopandas
-- pandas
-- plotly
-- folium
-- seaborn
-- io
-- tabulate
-- scipy
-- numpy
-- sklearn
+The packages used in this project are:
+- requests  
+- matplotlib  
+- os  
+- geopandas  
+- pandas  
+- plotly  
+- folium  
+- seaborn  
+- io  
+- tabulate  
+- scipy  
+- numpy  
+- sklearn  
 
-Il faudra au préalable installé les packages: requests, io, os, tabulate, scipy.
+The following packages must be installed beforehand: requests, io, os, tabulate, scipy.
 
+## Descriptive Statistics
 
-## Statistiques descriptives
-Pour la description des données, nous utiliserons essentiellement des méthodes d'analyse descriptive univariée et bivariée.
+For data description, we mainly rely on univariate and bivariate descriptive analysis methods.
 
-## Modélisation
-Nous avons utilisé un modèle de régression logistique multivariée (étant donné que la variable cible, qui est ici le niveau de gravité de l'accident, comporte plus de deux catégories). Ce modèle nous permet d'identifier les facteurs déterminants du niveau de gravité d'un accident, ainsi que d'estimer la probabilité de gravité de l'accident en fonction des variables explicatives.
+## Modeling
 
-## Sources des données
+We used a multivariate logistic regression model (since the target variable, accident severity level, has more than two categories). This model allows us to identify the key determinants of accident severity and to estimate the probability of severe outcomes based on explanatory variables.
 
-- [Base de données annuelles des accidents corporels de la circulation routière](https://www.data.gouv.fr/fr/datasets/bases-de-donnees-annuelles-des-accidents-corporels-de-la-circulation-routiere-annees-de-2005-a-2023/?reuses_page=1#/resources)
-- [Code officiel géographique](https://www.insee.fr/fr/metadonnees/source/operation/s2085/bases-donnees-ligne): où nous avons pris les données sur les codes INSEE des départements et leur noms.
-- [Données de population par département en France]("https://www.insee.fr/fr/statistiques/fichier/7752095/estim-pop-dep-sexe-gca-1975-2024.xls")
+## Data Sources
 
+- [Annual database of injury road traffic accidents](https://www.data.gouv.fr/fr/datasets/bases-de-donnees-annuelles-des-accidents-corporels-de-la-circulation-routiere-annees-de-2005-a-2023/?reuses_page=1#/resources)  
+- [Official Geographic Code](https://www.insee.fr/fr/metadonnees/source/operation/s2085/bases-donnees-ligne): used to obtain INSEE department codes and names  
+- [Population data by department in France](https://www.insee.fr/fr/statistiques/fichier/7752095/estim-pop-dep-sexe-gca-1975-2024.xls)
 
-Liens de téléchargement des bases de données annuelles sur les accidents corporels de la circulation routière en 2023:
-- [Base des usagers](https://www.data.gouv.fr/fr/datasets/r/68848e2a-28dd-4efc-9d5f-d512f7dbe66f)
-- [Base des véhicules](https://www.data.gouv.fr/fr/datasets/r/146a42f5-19f0-4b3e-a887-5cd8fbef057b)
-- [Base des lieux](https://www.data.gouv.fr/fr/datasets/r/8bef19bf-a5e4-46b3-b5f9-a145da4686bc)
-- [Base des caractéristiques des accidents](https://www.data.gouv.fr/fr/datasets/r/104dbb32-704f-4e99-a71e-43563cb604f2)
+Download links for the 2023 injury road traffic accident datasets:
+- [User database](https://www.data.gouv.fr/fr/datasets/r/68848e2a-28dd-4efc-9d5f-d512f7dbe66f)  
+- [Vehicle database](https://www.data.gouv.fr/fr/datasets/r/146a42f5-19f0-4b3e-a887-5cd8fbef057b)  
+- [Location database](https://www.data.gouv.fr/fr/datasets/r/8bef19bf-a5e4-46b3-b5f9-a145da4686bc)  
+- [Accident characteristics database](https://www.data.gouv.fr/fr/datasets/r/104dbb32-704f-4e99-a71e-43563cb604f2)
 
-## Références
+## References
 
-- [regression lasso](https://www.ibm.com/fr-fr/topics/lasso-regression)
-- [regression logistique avec scikit learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
-- Description des bases de données annuelles des accidents corporels de la circulation routière Années de 2005 à 2023, ONISR. (disponible dans le repo)
+- [Lasso regression](https://www.ibm.com/fr-fr/topics/lasso-regression)  
+- [Logistic regression with scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)  
+- Description of the annual injury road traffic accident databases (2005–2023), ONISR (available in the repository)
 
-### Parcours du projet
+## Project Workflow
 
-- Le parcours du projet se fait en exécutant successivement les cellules du notebook.
-- En fonction de l'environnement dans lequel le notebook est exécuté, il se pourrait que l'exécution des cellules dans la partie modélisation prenne beaucoup de temps ou s'exécute indéfiniment. Il faudrait augmenter la puissance de calcul ou télécharger le notebook pour l'exécuter localement sur un ordinateur.
+- The project is explored by running the notebook cells sequentially.
+- Depending on the execution environment, the modeling section may take a long time or run indefinitely. In such cases, it may be necessary to increase computational resources or download and run the notebook locally.
 
-### Limites du projet
+## Project Limitations
 
-Les résultats de ce projet pourraient être améliorés et mieux affinés. Il serait possible de :
-- Utiliser des outils tels que les boîtes noires ou les caméras embarquées pour mieux comprendre les comportements des conducteurs avant, pendant et après un accident.
-- Mener des études plus approfondies sur les accidents impliquant des véhicules de transport en commun, des engins lourds et des manœuvres à contresens, afin de mieux comprendre les causes et de mettre en place des mesures préventives adaptées.
+The results of this project could be improved and refined. Possible extensions include:
+- Using tools such as black boxes or onboard cameras to better understand driver behavior before, during, and after accidents.
+- Conducting more in-depth studies on accidents involving public transport vehicles, heavy vehicles, and wrong-way driving, in order to better understand their causes and implement appropriate preventive measures.
 
-### Contacts
+## Contacts
 
-- lisabrice.demgnewafeu@ensae.fr
-- Oscar.zaidan@ensae.fr
-- kevin.abe@ensae.fr
+- lisabrice.demgnewafeu@ensae.fr  
+- oscar.zaidan@ensae.fr  
+- kevin.abe@ensae.fr  
